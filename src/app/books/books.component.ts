@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {HttpEvent} from "@angular/common/http";
 
 @Component({
   selector: 'app-books',
@@ -18,6 +19,8 @@ export class BooksComponent implements OnInit{
   handleClick():void {
     this.isDisable = true;
   }
+
+   myName: string = 'Aleksei';
 
   protected readonly onmouseover = onmouseover;
 }

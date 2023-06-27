@@ -1,5 +1,7 @@
 <h2>Programming books list</h2>
 <button [disabled]="isDisable"  (click)="handleClick()" (mouseover)="handleClick()">Show books</button>
+<input type="text" [(ngModel)]="myName">
+<p>{{myName}}</p>
 <ul>
     <li><img [src]="src" [alt]="name " width="28"/>
       {{ name }} by {{ author }}
