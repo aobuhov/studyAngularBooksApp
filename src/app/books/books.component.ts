@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpEvent} from "@angular/common/http";
 import {Book} from "../models/book";
 
 @Component({
@@ -30,6 +29,10 @@ export class BooksComponent implements OnInit{
   constructor() {
   }
   ngOnInit(): void {
+  }
+
+  addToCard(book: Book) {
+    this.card.push(book);
   }
 
   protected readonly onmouseover = onmouseover;
