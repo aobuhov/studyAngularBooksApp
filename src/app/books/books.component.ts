@@ -9,6 +9,7 @@ export class BooksComponent implements OnInit{
   name: string = 'Clean code';
   author: string = 'Bod';
   src: string = 'favicon.ico';
+  isDisable:boolean = false;
   constructor() {
   }
   ngOnInit(): void {
