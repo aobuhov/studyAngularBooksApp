@@ -1,12 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpEvent} from "@angular/common/http";
-
-interface Book {
-  name:string,
-  author: string,
-  src: string,
-  amount: number
-}
+import {Book} from "../models/book";
 
 @Component({
   selector: 'app-books',
