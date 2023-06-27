@@ -15,4 +15,9 @@ export class BooksComponent implements OnInit{
   ngOnInit(): void {
   }
 
+  handleClick():void {
+    this.isDisable = true;
+  }
+
+  protected readonly onmouseover = onmouseover;
 }
