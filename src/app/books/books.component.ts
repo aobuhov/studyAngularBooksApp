@@ -4,7 +4,8 @@ import {HttpEvent} from "@angular/common/http";
 interface Book {
   name:string,
   author: string,
-  src: string
+  src: string,
+  amount: number
 }
 
 @Component({
@@ -17,12 +18,14 @@ export class BooksComponent implements OnInit{
     {
       name: 'Clean code',
       author: 'Ben',
-      src: 'favicon.ico'
+      src: 'favicon.ico',
+      amount: 100
     },
     {
       name: 'Hard code',
       author: 'Alex',
-      src: 'favicon.ico'
+      src: 'favicon.ico',
+      amount: 56
     }
   ];
 

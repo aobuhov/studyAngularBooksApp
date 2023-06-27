@@ -7,6 +7,7 @@
   <ng-container *ngFor="let book of books; let i = index">
     <li><img [src]="book.src" [alt]="book.name" width="28"/>
       {{i+1}} {{ book.name | titlecase }} by {{ book.author | uppercase }}
+      <p> Cost: {{ book.amount | currency: 'EUR'}}</p>
     </li>
   </ng-container>
 </ul>
