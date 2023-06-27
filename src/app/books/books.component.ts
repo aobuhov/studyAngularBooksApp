@@ -16,9 +16,5 @@ export class BooksComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  toogleBooks(): void {
-    this.isShowing = !this.isShowing;
-  }
-
   protected readonly onmouseover = onmouseover;
 }

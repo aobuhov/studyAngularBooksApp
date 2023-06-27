@@ -1,5 +1,5 @@
 <h2>Programming books list</h2>
-<button (click)="toogleBooks()">Toggle books</button>
+<button (click)="isShowing = !isShowing">Toggle books</button>
 <ul *ngIf="isShowing">
     <li><img [src]="src" [alt]="name " width="28"/>
       {{ name }} by {{ author }}
