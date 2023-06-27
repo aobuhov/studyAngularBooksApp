@@ -23,6 +23,8 @@ export class BooksComponent implements OnInit{
     }
   ];
 
+  card: Array<Book> = new Array<Book>();
+
   isShowing:boolean = true;
 
   constructor() {
