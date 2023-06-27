@@ -4,7 +4,7 @@
   <ng-container *ngIf="isShowing">hide books</ng-container>
 </button>
 <ul *ngIf="isShowing">
-    <li *ngFor="let book of books"><img [src]="book.src" [alt]="book.name" width="28"/>
-      {{ book.name }} by {{ book.author }}
+    <li *ngFor="let book of books; let i = index"><img [src]="book.src" [alt]="book.name" width="28"/>
+      {{i+1}} {{ book.name }} by {{ book.author }}
     </li>
 </ul>
