@@ -10,17 +10,15 @@ export class BooksComponent implements OnInit{
   name: string = 'Clean code';
   author: string = 'Bod';
   src: string = 'favicon.ico';
-  isDisable:boolean = false;
+  isShowing:boolean = true;
   constructor() {
   }
   ngOnInit(): void {
   }
 
-  handleClick():void {
-    this.isDisable = true;
+  toogleBooks(): void {
+    this.isShowing = !this.isShowing;
   }
-
-   myName: string = 'Aleksei';
 
   protected readonly onmouseover = onmouseover;
 }
