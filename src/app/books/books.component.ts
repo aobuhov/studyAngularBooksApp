@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Book} from "../models/book";
+import {BooksService} from "./books.service";
 
 @Component({
   selector: 'app-books',
@@ -7,28 +8,16 @@ import {Book} from "../models/book";
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit{
-  books: Array<Book> = [
-    {
-      name: 'Clean code',
-      author: 'Ben',
-      src: 'favicon.ico',
-      amount: 100
-    },
-    {
-      name: 'Hard code',
-      author: 'Alex',
-      src: 'favicon.ico',
-      amount: 56
-    }
-  ];
-
+  books: Array<Book> = new Array<Book>();
   card: Array<Book> = new Array<Book>();
 
   isShowing:boolean = true;
 
-  constructor() {
+  constructor(private booksService: BooksService) {
+
   }
   ngOnInit(): void {
+    this.books = this.booksService.getBooks();
   }
 
   addToCard(book: Book) {
