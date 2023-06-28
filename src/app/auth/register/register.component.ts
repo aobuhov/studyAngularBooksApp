@@ -9,7 +9,7 @@ import {Login} from "../../models/auth";
 export class RegisterComponent {
 
   form:Login = {
-    username: '',
+    email: '',
     password: '',
     confirmPassword: '',
   };

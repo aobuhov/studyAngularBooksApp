@@ -8,7 +8,7 @@ import {Login} from "../../models/auth";
 })
 export class LoginComponent {
   form: Login = {
-    username: '',
+    email: '',
     password: '',
     confirmPassword: ''
   }
