@@ -9,7 +9,8 @@ import {Login} from "../../models/auth";
 export class LoginComponent {
   form: Login = {
     username: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   }
 
   submit() {

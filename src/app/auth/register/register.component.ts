@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Login} from "../../models/auth";
 
 @Component({
   selector: 'app-register',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  form:Login = {
+    username: '',
+    password: '',
+    confirmPassword: '',
+  };
+  submit() {
+
+  }
 }
