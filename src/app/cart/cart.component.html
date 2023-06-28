@@ -2,7 +2,7 @@
 <div *ngIf="getCount() > 0">
   <p>{{getCount()}}</p>
   <ng-container *ngFor="let book of getCart()">
-    <div>{{book.name}}</div>
+    <div class="my-4 text-2xl">{{book.name}}</div>
   </ng-container>
 
 </div>
