@@ -10,6 +10,7 @@ import {CartService} from "../../services/cart.service";
 export class BookComponent implements OnInit{
 
   @Input() book: Book = {} as Book;
+  isInCart: boolean = false;
 
   constructor(private cartService: CartService) {
   }
@@ -18,7 +19,12 @@ export class BookComponent implements OnInit{
   }
 
   addToCart() {
+    this.isInCart = true;
     this.cartService.add(this.book);
+  }
+  removeFromCart() {
+    this.isInCart = false;
+    this.cartService.remove(this.book);
   }
 
 }
