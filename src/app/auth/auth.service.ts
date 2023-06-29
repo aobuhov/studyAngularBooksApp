@@ -63,7 +63,8 @@ export class AuthService {
   logout() {
     const auth = getAuth();
     signOut(auth).then(() => {
-      this.router.navigate(['login'])
+      this.router.navigate(['login']);
+      this.isAuthenticated = false;
     }).catch((error) => {
       // An error happened.
     });
