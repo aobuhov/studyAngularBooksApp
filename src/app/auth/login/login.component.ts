@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Login} from "../../models/auth";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {AuthService} from "../auth.service";
 
 @Component({
   selector: 'app-login',
@@ -14,28 +15,16 @@ export class LoginComponent {
     confirmPassword: ''
   }
 
-  isLoading: boolean = false;
+  constructor(private authService: AuthService) {
+  }
 
   submit() {
-    if(this.isLoading) {
-      return;
-    }
-    this.isLoading = true;
+    this.authService.login(this.form);
+  }
 
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, this.form.email, this.form.password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        alert('login successfully')
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert('credentials wrong')
-      }).finally(()=>{this.isLoading = false;});
 
+  isLoading(): boolean {
+    return this.authService.isLoading;
   }
 
   protected readonly onsubmit = onsubmit;
