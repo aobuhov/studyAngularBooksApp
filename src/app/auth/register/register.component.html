@@ -46,9 +46,12 @@
          class="p-4 bg-red-200 text-red-800 rounded">Password confirm should be valid</div>
 
     <div class="my-5 w-full">
-      <input type="submit"
+      <button type="submit"
              [disabled]="myForm.form.invalid"
              class="p-2 w-full bg-purple-700 text-white hover:bg-purple-900 rounded">
+        <ng-container *ngIf="isLoading">In process...</ng-container>
+        <ng-container *ngIf="!isLoading">Register</ng-container>
+        </button>
     </div>
   </form>
 </div>

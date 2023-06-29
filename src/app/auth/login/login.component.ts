@@ -14,7 +14,14 @@ export class LoginComponent {
     confirmPassword: ''
   }
 
+  isLoading: boolean = false;
+
   submit() {
+    if(this.isLoading) {
+      return;
+    }
+    this.isLoading = true;
+
     const auth = getAuth();
     signInWithEmailAndPassword(auth, this.form.email, this.form.password)
       .then((userCredential) => {
@@ -27,7 +34,7 @@ export class LoginComponent {
         const errorCode = error.code;
         const errorMessage = error.message;
         alert('credentials wrong')
-      });
+      }).finally(()=>{this.isLoading = false;});
 
   }
 
