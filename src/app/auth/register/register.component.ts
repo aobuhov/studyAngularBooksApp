@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Login} from "../../models/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,24 @@ export class RegisterComponent {
     password: '',
     confirmPassword: '',
   };
+
+  passwordMatched: boolean = true;
   submit() {
-    console.log(this.form);
+    if (this.form.password !== this.form.confirmPassword) {
+      this.passwordMatched = false;
+      return;
+    }
+
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, this.form.email, this.form.password)
+      .then((userCredential) => {
+        // Signed in
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
   }
 }
